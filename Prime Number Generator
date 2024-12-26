@@ -1,0 +1,11 @@
+def generate_primes(limit):
+    primes = []
+    for num in range(2, limit + 1):
+        if all(num % p != 0 for p in primes):
+            primes.append(num)
+    return primes
+
+if __name__ == "__main__":
+    limit = int(input("Generate primes up to: "))
+    primes = generate_primes(limit)
+    print(f"Prime numbers up to {limit}: {primes}")

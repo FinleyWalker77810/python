@@ -1,0 +1,15 @@
+from collections import Counter
+
+def count_words(file_path):
+    with open(file_path, 'r') as file:
+        text = file.read()
+    words = text.split()
+    word_count = Counter(words)
+    return word_count
+
+if __name__ == "__main__":
+    file_path = input("Enter the text file path: ")
+    word_counts = count_words(file_path)
+    print("Word Frequencies:")
+    for word, count in word_counts.most_common():
+        print(f"{word}: {count}")
